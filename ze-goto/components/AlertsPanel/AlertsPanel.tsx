@@ -1,4 +1,3 @@
-// components/AlertsPanel/AlertsPanel.tsx
 import React from 'react';
 import {
   ClockIcon,
@@ -13,14 +12,13 @@ interface AlertsPanelProps {
   onDetailClick: (alert: Alert) => void;
 }
 
-
 const severityColors: Record<Alert['severity'], string> = {
   high: 'bg-red-600',
   medium: 'bg-yellow-500',
   low: 'bg-blue-500',
 };
 
-const AlertsPanel: React.FC<AlertsPanelProps> = ({ alerts }) => {
+const AlertsPanel: React.FC<AlertsPanelProps> = ({ alerts, onDetailClick }) => {
   return (
     <div className="p-6 h-full flex flex-col">
       <div className="flex justify-between items-center mb-4">
@@ -50,7 +48,10 @@ const AlertsPanel: React.FC<AlertsPanelProps> = ({ alerts }) => {
             </div>
             <div className="flex items-center text-gray-400 text-sm">
               <span className="mr-1">Robô:</span> {alert.robot}
-              <button className="ml-auto text-blue-400 hover:text-blue-300 flex items-center text-sm">
+              <button
+                onClick={() => onDetailClick(alert)}
+                className="ml-auto text-blue-400 hover:text-blue-300 flex items-center text-sm"
+              >
                 Ver Detalhes <ArrowRightIcon className="h-4 w-4 ml-1" />
               </button>
             </div>
