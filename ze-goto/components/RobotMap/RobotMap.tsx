@@ -51,7 +51,29 @@ const RobotMap: React.FC<RobotMapProps> = ({ robots, onRobotSelect, selectedRobo
               left = '65%';
               break;
           }
+// components/CameraFeed/CameraFeed.tsx
 
+// ... outros imports
+
+const cameraData: Record<string, any> = {
+  'ZG-001': {
+    gps: '-23.5505° -46.6333°',
+    prof: '2.3m',
+    temp: '18°C',
+    recStatus: 'REC',
+    resolution: '4K 60FPS',
+    alert: 'OBSTRUÇÃO DETECTADA',
+    distance: '15m',
+    quality: '4K Ultra HD',
+    fps: 60,
+    latency: '42ms',
+    bitrate: '12.5 Mbps',
+    imageUrl: '/galeria-subterranea.jpg', // <-- ADICIONE ESTA LINHA
+  },
+  // Você pode adicionar outros robôs com outras imagens aqui
+};
+
+// ... resto do componente
           return (
             <div
               key={robot.id}

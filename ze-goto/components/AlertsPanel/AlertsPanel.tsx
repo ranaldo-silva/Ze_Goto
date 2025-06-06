@@ -1,63 +1,88 @@
+// components/AlertsPanel/AlertsPanel.tsx
+"use client";
+
 import React from 'react';
-import {
-  ClockIcon,
-  MapPinIcon,
-  ArrowRightIcon,
-  ExclamationTriangleIcon
-} from '@heroicons/react/24/outline';
-import { Alert } from '../../types';
+import type { Alert, User } from '@/types';
 
 interface AlertsPanelProps {
   alerts: Alert[];
   onDetailClick: (alert: Alert) => void;
+  currentUser?: User | null;
+  onDelete?: (id: number) => void;
+  onDispatchTeam?: (alert: Alert) => void;
+  onResolve?: (id: number) => void;
 }
 
-const severityColors: Record<Alert['severity'], string> = {
-  high: 'bg-red-600',
-  medium: 'bg-yellow-500',
-  low: 'bg-blue-500',
-};
-
-const AlertsPanel: React.FC<AlertsPanelProps> = ({ alerts, onDetailClick }) => {
+const AlertsPanel: React.FC<AlertsPanelProps> = ({
+  alerts,
+  onDetailClick,
+  currentUser,
+  onDelete,
+  onDispatchTeam,
+  onResolve
+}) => {
   return (
-    <div className="p-6 h-full flex flex-col">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-white flex items-center">
-          <ExclamationTriangleIcon className="h-6 w-6 text-yellow-400 mr-2" />
-          Alertas Recentes
-        </h2>
-        <button className="text-sm text-gray-400 hover:text-white transition-colors">
-          <span className="font-semibold">{alerts.length}</span> ativos
-        </button>
-      </div>
-
-      <div className="space-y-4 overflow-y-auto custom-scrollbar flex-grow">
+    <div>
+      <h2 className="text-xl font-semibold mb-4">Alertas Recentes</h2>
+      <ul className="space-y-3">
         {alerts.map((alert) => (
-          <div key={alert.id} className="bg-slate-700/50 p-4 rounded-lg flex flex-col shadow-md">
-            <div className="flex justify-between items-start mb-2">
-              <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${severityColors[alert.severity]} text-white`}>
-                {alert.severity.toUpperCase()}
-              </span>
-              <div className="flex items-center text-gray-400 text-sm">
-                <ClockIcon className="h-4 w-4 mr-1" /> {alert.time}
+          <li
+            key={alert.id}
+            className={`p-4 rounded-md bg-slate-800 border-l-4 relative ${
+              alert.resolved
+                ? 'border-green-600 opacity-60'
+                : alert.severity === 'high'
+                ? 'border-red-500'
+                : alert.severity === 'medium'
+                ? 'border-yellow-500'
+                : 'border-blue-500'
+            }`}
+          >
+            {alert.resolved && (
+              <span className="absolute top-2 right-3 text-green-400 text-xs font-semibold">Resolvido</span>
+            )}
+            <div className="flex justify-between items-center">
+              <div>
+                <p className="font-bold text-white text-sm">{alert.type}</p>
+                <p className="text-gray-400 text-xs">{alert.location}</p>
+                <p className="text-xs text-gray-500 mt-1">{alert.time} - Robô: {alert.robot}</p>
+              </div>
+              <div className="flex flex-col gap-1 items-end text-right">
+                <button
+                  onClick={() => onDetailClick(alert)}
+                  className="text-blue-400 hover:text-white text-sm underline"
+                >
+                  Detalhes
+                </button>
+                {currentUser?.role === 'supervisor' && !alert.resolved && (
+                  <>
+                    <button
+                      onClick={() => onDispatchTeam?.(alert)}
+                      className="text-green-400 hover:text-green-600 text-xs"
+                    >
+                      Enviar Equipe
+                    </button>
+                    <button
+                      onClick={() => onResolve?.(alert.id)}
+                      className="text-yellow-400 hover:text-yellow-500 text-xs"
+                    >
+                      Marcar como Resolvido
+                    </button>
+                  </>
+                )}
+                {currentUser?.role === 'supervisor' && onDelete && (
+                  <button
+                    onClick={() => onDelete(alert.id)}
+                    className="text-red-400 hover:text-red-600 text-xs"
+                  >
+                    Excluir
+                  </button>
+                )}
               </div>
             </div>
-            <p className="text-white font-medium mb-1">{alert.description}</p>
-            <div className="flex items-center text-gray-400 text-sm mb-1">
-              <MapPinIcon className="h-4 w-4 mr-1" /> {alert.location}
-            </div>
-            <div className="flex items-center text-gray-400 text-sm">
-              <span className="mr-1">Robô:</span> {alert.robot}
-              <button
-                onClick={() => onDetailClick(alert)}
-                className="ml-auto text-blue-400 hover:text-blue-300 flex items-center text-sm"
-              >
-                Ver Detalhes <ArrowRightIcon className="h-4 w-4 ml-1" />
-              </button>
-            </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -54,7 +53,7 @@ export default function Apresentacao({ onContinue }: { onContinue: () => void })
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <div className="bg-slate-800 p-6 rounded-lg shadow-md flex flex-col items-center">
               <ShieldCheckIcon className="h-12 w-12 text-blue-400 mb-3" />
-              <h3 className="font-bold text-xl mb-2">Monitoramento 24/7</h3>
+              <h3 className="font-bold text-xl mb-2">Monitoramento</h3>
               <p className="text-sm text-gray-400">Vigilância contínua das galerias subterrâneas de São Paulo</p>
             </div>
             <div className="bg-slate-800 p-6 rounded-lg shadow-md flex flex-col items-center">
@@ -83,13 +82,13 @@ export default function Apresentacao({ onContinue }: { onContinue: () => void })
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-4">1</div>
               <CpuChipIcon className="h-12 w-12 text-blue-400 mb-3" />
               <h3 className="font-bold text-xl mb-2">Patrulhamento Autônomo</h3>
-              <p className="text-sm text-gray-400">Robôs navegam pelas galerias seguindo rotas otimizadas por IA</p>
+              <p className="text-sm text-gray-400">Robôs navegam pelas galerias seguindo rotas otimizadas</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-3xl font-bold mb-4">2</div>
               <MagnifyingGlassIcon className="h-12 w-12 text-blue-400 mb-3" />
               <h3 className="font-bold text-xl mb-2">Análise em Tempo Real</h3>
-              <p className="text-sm text-gray-400">Sensores e câmeras analisam estruturas e detectam anomalias</p>
+              <p className="text-sm text-gray-400">Câmeras analisam estruturas e detectam anomalias</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-3xl font-bold mb-4">3</div>
