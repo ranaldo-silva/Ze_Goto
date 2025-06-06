@@ -153,6 +153,6 @@ Contribuições são bem-vindas!
 
 
 🧑‍💻 Autores
-Seu Nome – LinkedIn | GitHub
+Seu Nome – LinkedIn  https://www.linkedin.com/in/ranaldo-jos%C3%A9-da-silva-301955163/ | https://github.com/EquipeFiapProjeto
 
 
