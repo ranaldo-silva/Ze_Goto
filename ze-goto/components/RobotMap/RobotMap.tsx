@@ -33,54 +33,21 @@ const RobotMap: React.FC<RobotMapProps> = ({ robots, onRobotSelect, selectedRobo
           </svg>
         </div>
 
-        {robots.map((robot) => {
-          let top = 'auto';
-          let left = 'auto';
-
-          switch (robot.id) {
-            case 'ZG-001':
-              top = '40%';
-              left = '20%';
-              break;
-            case 'ZG-003':
-              top = '60%';
-              left = '45%';
-              break;
-            case 'ZG-007':
-              top = '25%';
-              left = '65%';
-              break;
-          }
-// components/CameraFeed/CameraFeed.tsx
-
-// ... outros imports
-
-const cameraData: Record<string, any> = {
-  'ZG-001': {
-    gps: '-23.5505° -46.6333°',
-    prof: '2.3m',
-    temp: '18°C',
-    recStatus: 'REC',
-    resolution: '4K 60FPS',
-    alert: 'OBSTRUÇÃO DETECTADA',
-    distance: '15m',
-    quality: '4K Ultra HD',
-    fps: 60,
-    latency: '42ms',
-    bitrate: '12.5 Mbps',
-    imageUrl: '/galeria-subterranea.jpg', // <-- ADICIONE ESTA LINHA
-  },
-  // Você pode adicionar outros robôs com outras imagens aqui
-};
-
-// ... resto do componente
-          return (
+        {/* ATUALIZAÇÃO DE SEGURANÇA E LÓGICA DINÂMICA */}
+        {robots
+          // PASSO DE SEGURANÇA: Filtra qualquer item que não seja um objeto válido (previne erros)
+          .filter(robot => robot) 
+          .map((robot) => (
             <div
               key={robot.id}
-              className={`absolute flex flex-col items-center cursor-pointer ${
-                selectedRobot === robot.id ? 'z-20' : ''
+              className={`absolute flex flex-col items-center cursor-pointer transition-transform duration-300 hover:scale-110 ${
+                selectedRobot === robot.id ? 'z-20 scale-125' : 'z-10'
               }`}
-              style={{ top, left }}
+              // Lógica dinâmica para usar a posição salva de cada robô
+              style={{
+                top: robot.top || '50%', // Usa a posição salva ou um valor padrão
+                left: robot.left || '50%',
+              }}
               onClick={() => onRobotSelect(robot.id)}
             >
               <div
@@ -97,8 +64,7 @@ const cameraData: Record<string, any> = {
                 <span className="text-[10px] text-gray-400">{robot.location}</span>
               )}
             </div>
-          );
-        })}
+        ))}
       </div>
 
       <div className="absolute bottom-4 left-4 flex space-x-4 text-sm z-10">

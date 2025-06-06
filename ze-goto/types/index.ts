@@ -2,7 +2,7 @@
 
 // --- Tipos para Usuários ---
 export interface User {
-  id: number; // Adicionado para consistência no AdminPanel
+  id: number;
   name: string;
   email: string;
   password?: string;
@@ -25,7 +25,7 @@ export interface Alert {
   time: string;
   robot: string;
   description: string;
-  resolved?: boolean; // Adicionado para consistência
+  resolved?: boolean;
   status?: 'novo' | 'em andamento' | 'resolvido' | 'ignorado';
   observacoes?: string[];
   actions?: AlertAction[];
@@ -36,17 +36,19 @@ export interface Robot {
   id: string;
   name: string;
   location: string;
-  status: 'active' | 'inspection' | 'maintenance' | 'alert'; // Unificado com todas as opções
+  status: 'active' | 'inspection' | 'maintenance' | 'alert';
   battery: number;
   signal: number;
   lastUpdate: string;
+  // ADICIONADO: Propriedades para a posição no mapa
+  top?: string;
+  left?: string;
 }
 
 export interface Stat {
   title: string;
   value: string;
   change: string;
-  // A versão mais específica é melhor que apenas 'string'
   icon: 'activeRobots' | 'monitoredGalleries' | 'activeAlerts' | 'inspectionsToday';
   color: string;
 }

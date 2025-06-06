@@ -13,10 +13,7 @@ import LoginModal from '@/components/LoginModal/LoginModal';
 import AlertManualModal from '@/components/AlertManualModal/AlertManualModal';
 import AdminPanel from '@/components/AdminPanel/AdminPanel'; 
 import RobotStatus from '@/components/RobotStatus/RobotStatus'; 
-// CORRIGIDO: O caminho do RobotCameraView agora usa o atalho @/
 import RobotCameraView from '@/components/RobotCameraView/RobotCameraView';
-
-// REMOVIDO: O import do CameraFeed antigo não é mais necessário.
 
 // Imports dos Tipos
 import { Alert, Robot, Stat, User } from '@/types';
