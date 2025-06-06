@@ -29,7 +29,7 @@
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/ze-goto.git
+https://github.com/EquipeFiapProjeto/Ze_Goto.git
 cd ze-goto
 
 
