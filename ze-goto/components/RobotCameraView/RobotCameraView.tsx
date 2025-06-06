@@ -29,7 +29,7 @@ const cameraData: Record<string, RobotViewData> = {
     statusGravacao: 'GRAVANDO',
     resolucao: '4K 60FPS',
     alerta: 'OBSTRUÇÃO DETECTADA',
-    imageUrl: '/galeria-subterranea.jpg', // Lembre-se de ter essa imagem na pasta /public
+    imageUrl: '/Image/Zegoto1.png', // Lembre-se de ter essa imagem na pasta /public
   },
   'ZG-003': {
     gps: '-23.5614° S, 46.6565° W',
@@ -37,7 +37,7 @@ const cameraData: Record<string, RobotViewData> = {
     temperatura: '16°C',
     statusGravacao: 'GRAVANDO',
     resolucao: '1080p 60FPS',
-    imageUrl: '/Image/Gemini_Generated_image_1.jpg', // Exemplo de imagem gerada
+    imageUrl: '/Image/Zegoto1.png', // Exemplo de imagem gerada
   },
     'ZG-007': {
     gps: '-23.5475° S, 46.6361° W',
@@ -46,7 +46,7 @@ const cameraData: Record<string, RobotViewData> = {
     statusGravacao: 'STANDBY',
     resolucao: '1080p 30FPS',
     alerta: 'SINAL BAIXO',
-    imageUrl: '/galeria-vazia.jpg', // Exemplo com outra imagem
+    imageUrl: '/Image/Zegoto1.png', // Exemplo com outra imagem
   },
 };
 

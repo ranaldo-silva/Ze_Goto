@@ -33,19 +33,16 @@ const RobotMap: React.FC<RobotMapProps> = ({ robots, onRobotSelect, selectedRobo
           </svg>
         </div>
 
-        {/* ATUALIZAÇÃO DE SEGURANÇA E LÓGICA DINÂMICA */}
         {robots
-          // PASSO DE SEGURANÇA: Filtra qualquer item que não seja um objeto válido (previne erros)
-          .filter(robot => robot) 
+          .filter(robot => robot)
           .map((robot) => (
             <div
               key={robot.id}
               className={`absolute flex flex-col items-center cursor-pointer transition-transform duration-300 hover:scale-110 ${
                 selectedRobot === robot.id ? 'z-20 scale-125' : 'z-10'
               }`}
-              // Lógica dinâmica para usar a posição salva de cada robô
               style={{
-                top: robot.top || '50%', // Usa a posição salva ou um valor padrão
+                top: robot.top || '50%',
                 left: robot.left || '50%',
               }}
               onClick={() => onRobotSelect(robot.id)}
@@ -60,8 +57,10 @@ const RobotMap: React.FC<RobotMapProps> = ({ robots, onRobotSelect, selectedRobo
               >
                 {robot.name}
               </span>
-              {viewMode === 'detailed' && (
-                <span className="text-[10px] text-gray-400">{robot.location}</span>
+
+              {/* ✅ EXIBE A LOCALIZAÇÃO APENAS DO ROBÔ SELECIONADO */}
+              {selectedRobot === robot.id && (
+                <span className="text-[10px] text-gray-300 mt-0.5">{robot.location}</span>
               )}
             </div>
         ))}

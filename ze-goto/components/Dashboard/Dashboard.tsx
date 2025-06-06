@@ -27,13 +27,16 @@ export default function Dashboard() {
   const [mostrarLogin, setMostrarLogin] = useState(false);
   const [mostrarAlertaManual, setMostrarAlertaManual] = useState(false);
   
-  const [currentUser, setCurrentUser] = useState<User | null>(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('loggedUser');
-      return stored ? JSON.parse(stored) : null;
-    }
-    return null;
-  });
+ // O estado inicial é sempre 'null' no servidor e no cliente.
+const [currentUser, setCurrentUser] = useState<User | null>(null);
+
+// Usamos o useEffect para carregar os dados do localStorage apenas no lado do cliente.
+useEffect(() => {
+  const stored = localStorage.getItem('loggedUser');
+  if (stored) {
+    setCurrentUser(JSON.parse(stored));
+  }
+}, []); // O array vazio [] garante que isso rode apenas uma vez, após a montagem inicial.
 
   const [alerts, setAlerts] = useState<Alert[]>([]);
   const [activeRobots, setActiveRobots] = useState<Robot[]>([]);
@@ -63,9 +66,10 @@ export default function Dashboard() {
     setAlerts(updatedAlerts);
   };
   
-  const handleDispatchTeam = (alert: Alert) => {
-    alert(`Equipe enviada para ${alert.location} referente ao alerta "${alert.type}".`);
-  };
+  const handleDispatchTeam = (selectedAlert: Alert) => {
+  alert(`Equipe enviada para ${selectedAlert.location} referente ao alerta "${selectedAlert.type}".`);
+};
+
 
   const stats: Stat[] = [
     { title: 'Robôs Ativos', value: activeRobots.length.toString(), change: '+2', icon: 'activeRobots', color: 'text-green-500' },
