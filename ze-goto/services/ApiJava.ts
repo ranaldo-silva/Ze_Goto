@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = "https://java-apis-production.up.railway.app";
+const baseURL = "gs-java-zg-production.up.railway.app";
 
 const ApiJava = axios.create({
   baseURL: baseURL,
