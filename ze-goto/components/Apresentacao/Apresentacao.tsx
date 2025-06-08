@@ -16,18 +16,18 @@ const integrantes = [
     nome: 'Ranaldo José da Silva',
     rm: 'RM559210',
     foto: '/Image/IMG-Ronaldo.jpg',
-     github: "https://github.com/Ronaldo511722",
+     github: "https://github.com/Ronaldo511722", // Front End
     linkedin: "https://www.linkedin.com/in/ranaldo-jos%C3%A9-da-silva-301955163/",
   },
   {
-    nome: 'Fabricio José da Silva',
+    nome: 'Fabricio José da Silva', // Banco de dados
     rm: "RM560694",
     foto: '/Image/IMG-Fabricio.jpg',
      github: "https://github.com/FabricioJ0se",
     linkedin: "https://www.linkedin.com/in/fabricio-jose-da-silva/",
   },
   {
-    nome: 'Lucas Barbosa da Ressurreição',
+    nome: 'Lucas Barbosa da Ressurreição', // Back End
     rm: "RM560179",
     foto: '/Image/IMG-Lucas.jpg',
     github: "https://github.com/LucasRB-Tec",
