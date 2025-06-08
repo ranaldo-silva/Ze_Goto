@@ -20,7 +20,7 @@ const integrantes = [
     linkedin: "https://www.linkedin.com/in/ranaldo-jos%C3%A9-da-silva-301955163/",
   },
   {
-    nome: 'Fabricio José da Silva',
+    nome: 'Fbaricio José da Silva',
     rm: "RM560694",
     foto: '/Image/IMG-Fabricio.jpg',
      github: "https://github.com/FabricioJ0se",
