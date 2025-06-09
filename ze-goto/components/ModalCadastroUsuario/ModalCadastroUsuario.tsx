@@ -47,7 +47,10 @@ const ModalCadastroUsuario: React.FC<ModalCadastroUsuarioProps> = ({ onClose, on
     }
 
     let updatedUsers;
-    let finalUser: User = { name, email, password: password || editingUser?.password || '', role };
+    let finalUser: User = {
+      name, email, password: password || editingUser?.password || '', role,
+      id: 0
+    };
 
     if (isEditando) {
       updatedUsers = users.map(u => u.email === editingUser?.email ? finalUser : u);

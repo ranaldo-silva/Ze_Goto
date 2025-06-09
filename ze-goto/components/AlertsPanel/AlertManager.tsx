@@ -28,7 +28,7 @@ const AlertManagerModal: React.FC<AlertManagerModalProps> = ({ alert, onClose })
   const handleChamarEquipe = () => {
     if (!tipoEquipe) return alert('Selecione um tipo de equipe.');
     salvarHistorico(`Equipe de manutenção chamada (${tipoEquipe}). Obs: ${observacoes}`);
-    setTipoEquipe('');
+    setTipoEquipe(''); 
     setObservacoes('');
   };
 
