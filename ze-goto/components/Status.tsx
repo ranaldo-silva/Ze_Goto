@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import ApiJava from '@/service/ApiJava';
+import ApiJava from '@/services/ApiJava';
 
 interface StatusDashboard {
   robos_ativos: number;

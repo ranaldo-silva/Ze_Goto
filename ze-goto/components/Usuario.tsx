@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import ApiPython from '@/service/ApiPython';
+import ApiPython from '@/services/ApiPython'; // api python
 import ModalGenerico from '@/components/ModalGenerico';
 
 interface Usuario {

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import ApiJava from '@/service/ApiJava';
+import ApiJava from '@/services/ApiJava';
 import ModalGenerico from '@/components/ModalGenerico';
 
 interface Robo {
