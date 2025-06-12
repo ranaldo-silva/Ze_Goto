@@ -36,9 +36,9 @@ export default function Home() {
         <h2 className="text-2xl font-semibold text-center text-white">Processo de Monitoramento</h2>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {[
-            { number: "1", color: "text-blue-400", src: "/image/icons/processador.png", alt: "Imagem de um chip", title: "Patrulhamento Autônomo", desc: "Robôs navegam pelas galerias seguindo rotas otimizadas" },
-            { number: "2", color: "text-purple-400", src: "/image/icons/lupa.png", alt: "Imagem de uma lupa", title: "Análise em Tempo Real", desc: "Câmeras analisam estruturas e detectam anomalias" },
-            { number: "3", color: "text-green-400", src: "/image/icons/lampada.png", alt: "Imagem de uma lâmpada", title: "Alertas Inteligentes", desc: "Sistema envia notificações prioritárias para equipes de manutenção" },
+            { number: "1", color: "text-blue-400", src: "/Image/icons/processador.png", alt: "Imagem de um chip", title: "Patrulhamento Autônomo", desc: "Robôs navegam pelas galerias seguindo rotas otimizadas" },
+            { number: "2", color: "text-purple-400", src: "/Image/icons/lupa.png", alt: "Imagem de uma lupa", title: "Análise em Tempo Real", desc: "Câmeras analisam estruturas e detectam anomalias" },
+            { number: "3", color: "text-green-400", src: "/Image/icons/lampada.png", alt: "Imagem de uma lâmpada", title: "Alertas Inteligentes", desc: "Sistema envia notificações prioritárias para equipes de manutenção" },
           ].map((item, idx) => (
             <div key={idx} className="text-center">
               <div className={`text-3xl font-bold ${item.color}`}>{item.number}</div>
