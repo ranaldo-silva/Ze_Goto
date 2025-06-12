@@ -15,10 +15,10 @@ export default function Home() {
         </p>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {[
-            { src: "/image/icons/shield.png", alt: "Imagem de um escudo", title: "Monitoramento", desc: "Vigilância contínua das galerias subterrâneas de São Paulo" },
-            { src: "/image/icons/olho.png", alt: "Imagem de um olho", title: "Visão Computacional", desc: "Detecção automática de obstruções e problemas estruturais" },
-            { src: "/image/icons/sinos.png", alt: "Imagem de um sino", title: "Alertas em Tempo Real", desc: "Notificações instantâneas sobre situações críticas" },
-            { src: "/image/icons/ping.png", alt: "Imagem de um ícone de mapa", title: "Mapeamento Preciso", desc: "Localização exata dos robôs e pontos de interesse" },
+            { src: "/Image/icons/shield.png", alt: "Imagem de um escudo", title: "Monitoramento", desc: "Vigilância contínua das galerias subterrâneas de São Paulo" },
+            { src: "/Image/icons/olho.png", alt: "Imagem de um olho", title: "Visão Computacional", desc: "Detecção automática de obstruções e problemas estruturais" },
+            { src: "/Image/icons/sinos.png", alt: "Imagem de um sino", title: "Alertas em Tempo Real", desc: "Notificações instantâneas sobre situações críticas" },
+            { src: "/Image/icons/ping.png", alt: "Imagem de um ícone de mapa", title: "Mapeamento Preciso", desc: "Localização exata dos robôs e pontos de interesse" },
           ].map((item, idx) => (
             <div
               key={idx}
@@ -55,7 +55,7 @@ export default function Home() {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {[
             {
-              src: "/image/IMG-Ronaldo.jpg",
+              src: "/Image/IMG-Ronaldo.jpg",
               alt: "Ranaldo José da Silva",
               name: "Ranaldo José da Silva",
               rm: "RM559210",
@@ -63,7 +63,7 @@ export default function Home() {
               linkedin: "https://www.linkedin.com/in/ranaldo-jos%C3%A9-da-silva-301955163/",
             },
             {
-              src: "/image/IMG-Fabricio.jpg",
+              src: "/Image/IMG-Fabricio.jpg",
               alt: "Fabricio José da Silva",
               name: "Fabricio José da Silva",
               rm: "RM560694",
@@ -71,7 +71,7 @@ export default function Home() {
               linkedin: "https://www.linkedin.com/in/fabricio-jose-da-silva/",
             },
             {
-              src: "/image/IMG-Lucas.jpg",
+              src: "/Image/IMG-Lucas.jpg",
               alt: "Lucas Barbosa da Ressurreição",
               name: "Lucas Barbosa da Ressurreição",
               rm: "RM560179",

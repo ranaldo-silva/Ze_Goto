@@ -27,7 +27,7 @@ export default function TelaTeste() {
         {/* Imagem principal */}
         <div className="md:w-3/4 w-full bg-neutral-900 rounded-lg p-2 shadow-md">
           <img
-            src="/image/zegoto1.png"
+            src="/Image/zegoto1.png"
             alt="Visão do robô"
             className="w-full h-[600px] object-cover rounded-lg"
           />
